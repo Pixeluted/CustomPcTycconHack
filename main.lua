@@ -1,3 +1,5 @@
+print("Main scipt loaded")
+
 local Player = game.Players.LocalPlayer
 local PcItems = Player:WaitForChild("PcItems")
 
