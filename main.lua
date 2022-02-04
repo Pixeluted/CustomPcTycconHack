@@ -76,6 +76,19 @@ end
 
 getAllTypes()
 
+local function getProductInfo(category, productName)
+    local theData
+    
+    for currentProductName, productData in pairs(shopItemsInfo[category]) do 
+        if currentProductName == productName then
+            theData = productData
+            break;
+        end
+    end
+    
+    return theData
+end
+
 --// PC Building Functions
 local function placeCase(caseType)
     Remotes.PlaceItem:FireServer(caseType)
@@ -123,6 +136,5 @@ local function placeOtherCooling(OtherObject)
     Remotes.BuildPc:FireServer("groupPart") 
 end
 
-print(shopItemsInfo.Cases["Plain Case"].Currency)
 
 print("Main scipt loaded")
