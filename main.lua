@@ -53,10 +53,6 @@ function indexCategory(theFolder)
             price, theCurrency = getPriceAndCurrency(valueToConvert)
         end)
         
-        print()
-        print(theItem.Name)
-        print("PRICE: ", price)
-        print("CURRENCY: ", theCurrency)
     
         gatheredInfo[theItem.Name] = {
           ["Price"] = price,
@@ -72,8 +68,6 @@ function getAllTypes()
     for _,category in pairs(Shop:GetChildren()) do
         if category:IsA("Folder") then
             if category.Name ~= "Buttons" then
-                print()
-                print(category.Name)
                 shopItemsInfo[category.Name] = indexCategory(category)
             end
         end
@@ -128,5 +122,7 @@ local function placeOtherCooling(OtherObject)
     Remotes.PlacePart:FireServer("Air", OtherObject)
     Remotes.BuildPc:FireServer("groupPart") 
 end
+
+print(shopItemsInfo.Cases["Plain Case"].Currency)
 
 print("Main scipt loaded")
