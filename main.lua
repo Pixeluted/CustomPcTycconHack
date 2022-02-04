@@ -7,6 +7,7 @@ local Remotes = game:GetService("ReplicatedStorage").Resources.Remotes.RemoteEve
 local Shop = workspace.Shop
 
 local shopItemsModule = loadstring(game:HttpGet("https://github.com/Pixeluted/CustomPcTycconHack/raw/main/shopItems.lua"))()
+print(shopItemsModule)
 shopItemsModule.indexAllItems()
 
 local function placeCase(caseType)
