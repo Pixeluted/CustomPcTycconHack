@@ -4,6 +4,8 @@ local PcItems = Player:WaitForChild("PcItems")
 local Remotes = game:GetService("ReplicatedStorage").Resources.Remotes.RemoteEvents
 local Shop = workspace.Shop
 
+local shopItemsModule = loadstring(game.HtppService:GetAsync("https://github.com/Pixeluted/CustomPcTycconHack/raw/main/shopItems.lua", true))()
+shopItemsModule.indexAllItems()
 
 local function placeCase(caseType)
     Remotes.PlaceItem:FireServer(caseType)
